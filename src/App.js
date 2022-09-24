@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     let timer = setTimeout(() => {
       alertSet(false);
-    }, 6000);
+    }, 4000);
   });
   return (
     <div className="App">
@@ -43,7 +43,7 @@ function App() {
 function Video() {
   return (
     <video muted autoPlay playsInline className="video">
-      <source src="Truben_1.mp4" type="video/mp4" />
+      <source src="NVR_Logo.mp4" type="video/mp4" />
     </video>
   );
 }
