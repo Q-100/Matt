@@ -1,0 +1,167 @@
+.App {
+  /* iPhone 13 / 13 Pro - 1 */
+position: relative;
+overflow-y: scroll;
+
+background: #FFFFFF;
+}
+.mainContainer{
+  height: auto;
+  width: auto;
+}
+.img{
+  margin-bottom: 25px;
+  width: auto;
+  height: 89px;
+}
+
+.video{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.profile{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.profile>h1{
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+}
+.profile>h4{
+  margin-top: 0px;
+}
+.profile_img{
+  width: 192px;
+  height: auto;
+  margin-bottom: 10px;
+}
+.contactsButton{
+  display: block;
+  width: 115px;
+  height: auto;
+  background: #5b9fcc;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  line-height: 25px;
+  text-decoration: none;
+}
+.info{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: left;
+  margin-left: 10%;
+  width: 80%;
+}
+.infoItem{
+  display: inline-flex;
+  align-items: center;
+  height: 51px;
+  text-decoration-line: none;
+  color: #323232;
+}
+.infoItem>p{
+  margin-bottom: 0px;
+}
+.infoItem>img{
+  height: 39px;
+  margin-right: 10px;
+}
+
+.schedule{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.schedule>hr{
+  border: 1.5px solid rgb(0, 0, 0);
+  margin-top: 0px; 
+  margin-bottom: 40px;
+}
+.contact{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.contactMapInfo{
+  background-color: #D9D9D9D9;
+  color: 818181;
+  width: 100vw;
+  height: 5vh;
+  font-size: 15px;
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+}
+.contact>p{
+  margin-left: 20%;
+  margin-right: 20%;
+  font-size: 15px;
+  font-weight: bold;
+}
+.contact>hr{
+  border: 1.5px solid rgb(0, 0, 0);
+  margin-top: 0px; 
+  margin-bottom: 40px;
+}
+iframe{
+  width:100vw;
+  height: 35vh;
+
+  border:0;
+
+}
+
+.social{
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.social1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.social>h2{
+  align-self: center;
+}
+.social>hr{
+  border: 1.5px solid rgb(0, 0, 0);
+  margin-top: 0px; 
+  margin-bottom: 40px;
+  align-self: center;
+}
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer>a>img{
+  height: 100px;
+  margin-top: 50px;
+}
+.footer>p{
+  font-size: 15px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #8A8A8A;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 0px;
+}
