@@ -51,7 +51,7 @@ function Video() {
 function Profile() {
   return (
     <div className="profile">
-      <a href="https://www.trubeninvestment.com/">
+      <a href="https://www.nvrkr.com/">
         <img src="img/NVR_logo.png" alt="" className="img" />
       </a>
       <img src="img/profile_main.png" className="profile_img" alt="" />
@@ -59,7 +59,7 @@ function Profile() {
       <h4>대표이사</h4>
       <a
         className="contactsButton"
-        href="https://firebasestorage.googleapis.com/v0/b/nvr-front.appspot.com/o/users%2F-NCIeauFPHq3yYGCz52G%2Fcontact.vcf?alt=media&token=b59abe93-09de-4a52-b3a6-f83bcdf4f89d"
+        href="https://firebasestorage.googleapis.com/v0/b/nvr-front.appspot.com/o/users%2F-NCi_qoFyua2i5TnAPfD%2Fcontact.vcf?alt=media&token=12d74773-d2b0-4dc3-acd7-21cd41750dcd"
       >
         연락처 저장
       </a>
