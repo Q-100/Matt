@@ -2,7 +2,9 @@ import "./App.css";
 import infoData from "./data.js";
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+import "react-calendar/dist/Calendar.css"; // css import
+import "./button.js";
+import BlockExample from "./button.js";
 // 제목밑 구분선 사이 간격 줄이기, 굵기 늘리기
 // 소셜미디어 구분선 중앙으로 옮기기\
 // 컨택트 밑 주소 중앙으로 옮기기
@@ -32,6 +34,14 @@ function App() {
         </div>
       )}
     </div>
+    // <div className="mainContainer">
+    //   <Profile />
+    //   <Info info={info} />
+    //   <Schedule />
+    //   <Contact info={info} />
+    //   <SocialMedia />
+    //   <Footer />
+    // </div>
   );
 }
 function Video() {
@@ -45,7 +55,7 @@ function Video() {
 function Profile() {
   return (
     <div className="profile">
-      <a href="https://www.trubeninvestment.com/">
+      <a href="https://www.nvrkr.com/">
         <img src="img/NVR_logo.png" alt="" className="img" />
       </a>
       <img src="img/profile_main.png" className="profile_img" alt="" />
@@ -53,7 +63,7 @@ function Profile() {
       <h4>대표이사</h4>
       <a
         className="contactsButton"
-        href="https://firebasestorage.googleapis.com/v0/b/nvr-front.appspot.com/o/users%2F-NCIeauFPHq3yYGCz52G%2Fcontact.vcf?alt=media&token=b59abe93-09de-4a52-b3a6-f83bcdf4f89d"
+        href="https://firebasestorage.googleapis.com/v0/b/nvr-front.appspot.com/o/users%2F-NCi_qoFyua2i5TnAPfD%2Fcontact.vcf?alt=media&token=12d74773-d2b0-4dc3-acd7-21cd41750dcd"
       >
         연락처 저장
       </a>
@@ -80,40 +90,16 @@ function Info(props) {
   );
 }
 function Schedule() {
+  const [value, onChange] = useState(new Date());
   return (
     <div className="schedule">
       <h2>Schedule</h2>
       <hr style={{ width: "20vw" }} />
+      <div>Calendar space</div>
       <div>
-        Calendar space
-        <Calendar
-          onChange={onChange} // useState로 포커스 변경 시 현재 날짜 받아오기
-          formatDay={(locale, date) => moment(date).format("DD")} // 날'일' 제외하고 숫자만 보이도록 설정
-          value={value}
-          minDetail="month" // 상단 네비게이션에서 '월' 단위만 보이게 설정
-          maxDetail="month" // 상단 네비게이션에서 '월' 단위만 보이게 설정
-          navigationLabel={null}
-          showNeighboringMonth={false} //  이전, 이후 달의 날짜는 보이지 않도록 설정
-          className="mx-auto w-full text-sm border-b"
-          tileContent={({ date, view }) => {
-            // 날짜 타일에 컨텐츠 추가하기 (html 태그)
-            // 추가할 html 태그를 변수 초기화
-            let html = [];
-            // 현재 날짜가 post 작성한 날짜 배열(mark)에 있다면, dot div 추가
-            if (mark.find((x) => x === moment(date).format("YYYY-MM-DD"))) {
-              html.push(<div className="dot"></div>);
-            }
-            // 다른 조건을 주어서 html.push 에 추가적인 html 태그를 적용할 수 있음.
-            return (
-              <>
-                <div className="flex justify-center items-center absoluteDiv">
-                  {html}
-                </div>
-              </>
-            );
-          }}
-        />
+        <Calendar onChange={onChange} value={value} />
       </div>
+      <BlockExample />
     </div>
   );
 }
