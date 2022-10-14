@@ -2,9 +2,11 @@ import "./App.css";
 import infoData from "./data.js";
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css"; // css import
+import "./Calendar.css"; // css import
 import "./button.js";
 import BlockExample from "./button.js";
+import moment from "moment";
+import Modal from "react-modal";
 // 제목밑 구분선 사이 간격 줄이기, 굵기 늘리기
 // 소셜미디어 구분선 중앙으로 옮기기\
 // 컨택트 밑 주소 중앙으로 옮기기
@@ -28,6 +30,7 @@ function App() {
           <Profile />
           <Info info={info} />
           <Schedule />
+          <BlockExample />
           <Contact info={info} />
           {/* <SocialMedia /> */}
           <Footer />
@@ -95,11 +98,16 @@ function Schedule() {
     <div className="schedule">
       <h2>Schedule</h2>
       <hr style={{ width: "20vw" }} />
-      <div>Calendar space</div>
       <div>
-        <Calendar onChange={onChange} value={value} />
+        <Calendar
+          onChange={onChange}
+          value={value}
+          formatDay={(locale, date) => moment(date).format("DD")}
+        />
+        <div className="text-gray-500 mt-4">
+          {moment(value).format("YYYY년 MM월 DD일")}
+        </div>
       </div>
-      <BlockExample />
     </div>
   );
 }
@@ -143,5 +151,4 @@ function Footer() {
     </div>
   );
 }
-
 export default App;
