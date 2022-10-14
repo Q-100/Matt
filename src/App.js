@@ -6,7 +6,7 @@ import "./Calendar.css"; // css import
 import "./button.js";
 import BlockExample from "./button.js";
 import moment from "moment";
-import Modal from "react-modal";
+import Modal from "./Modal.js";
 // 제목밑 구분선 사이 간격 줄이기, 굵기 늘리기
 // 소셜미디어 구분선 중앙으로 옮기기\
 // 컨택트 밑 주소 중앙으로 옮기기
@@ -15,12 +15,23 @@ import Modal from "react-modal";
 
 function App() {
   const [info, infoChange] = useState(infoData);
+  const [value, onChange] = useState(new Date());
   let [alert, alertSet] = useState(true);
   useEffect(() => {
     let timer = setTimeout(() => {
       alertSet(false);
     }, 4000);
   });
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    console.log("열림");
+    setModalOpen(true);
+  };
+  const closeModal = () => {
+    console.log("닫힘");
+    setModalOpen(false);
+  };
   return (
     <div className="App">
       {alert === true ? (
@@ -29,8 +40,16 @@ function App() {
         <div className="mainContainer">
           <Profile />
           <Info info={info} />
-          <Schedule />
-          <BlockExample />
+          <Schedule value={value} onChange={onChange} />
+          <button onClick={openModal} className="scheduleButton">
+            일정 잡기
+          </button>
+          <Modal
+            open={modalOpen}
+            close={closeModal}
+            header="일정 잡기"
+            value={value}
+          ></Modal>
           <Contact info={info} />
           {/* <SocialMedia /> */}
           <Footer />
@@ -92,8 +111,10 @@ function Info(props) {
     </div>
   );
 }
-function Schedule() {
-  const [value, onChange] = useState(new Date());
+function Schedule(props) {
+  // const [value, onChange] = useState(new Date());
+  const value = props.value;
+  const onChange = props.onChange;
   return (
     <div className="schedule">
       <h2>Schedule</h2>
@@ -104,9 +125,6 @@ function Schedule() {
           value={value}
           formatDay={(locale, date) => moment(date).format("DD")}
         />
-        <div className="text-gray-500 mt-4">
-          {moment(value).format("YYYY년 MM월 DD일")}
-        </div>
       </div>
     </div>
   );
