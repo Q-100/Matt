@@ -119,6 +119,6 @@ input[type="time"]:before {
 input[type="time"]:hover:before {
   content: '';
 }
-.mainContainer{
+.mainContainer1{
   text-align: center;
 }

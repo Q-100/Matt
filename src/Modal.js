@@ -18,7 +18,7 @@ const Modal = (props) => {
             </button>
           </header>
           <main>
-            <div>
+            <div className="mainContainer1">
               <div>
                 <input type="text" placeholder="성함" />
                 <input type="text" placeholder="연락처" />
