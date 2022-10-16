@@ -3,15 +3,8 @@ import infoData from "./data.js";
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "./Calendar.css"; // css import
-import "./button.js";
-import BlockExample from "./button.js";
 import moment from "moment";
 import Modal from "./Modal.js";
-// 제목밑 구분선 사이 간격 줄이기, 굵기 늘리기
-// 소셜미디어 구분선 중앙으로 옮기기\
-// 컨택트 밑 주소 중앙으로 옮기기
-// 버튼 기능 넣기, SNS 링크 연결하기
-// 그외 디테일잡기
 
 function App() {
   const [info, infoChange] = useState(infoData);
@@ -56,14 +49,6 @@ function App() {
         </div>
       )}
     </div>
-    // <div className="mainContainer">
-    //   <Profile />
-    //   <Info info={info} />
-    //   <Schedule />
-    //   <Contact info={info} />
-    //   <SocialMedia />
-    //   <Footer />
-    // </div>
   );
 }
 function Video() {
